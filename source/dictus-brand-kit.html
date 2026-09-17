@@ -34,8 +34,11 @@
     --white-40:   rgba(255,255,255,0.40);
     --white-15:   rgba(255,255,255,0.08);
 
+    /* Presentation and marketing fonts; native UI follows the platform rules below. */
     --font-sans: 'DM Sans', sans-serif;
     --font-mono: 'DM Mono', monospace;
+    --font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-rounded: ui-rounded, system-ui, sans-serif;
   }
 
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -485,7 +488,7 @@
       </div>
     </div>
 
-    <!-- Wordmark -->
+    <!-- Website wordmark; app wordmarks follow their platform typography. -->
     <div style="margin-top:32px;padding:40px;background:var(--ink-2);border-radius:16px;border:1px solid var(--border);display:flex;align-items:center;gap:20px;">
       <svg width="48" height="48" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="80" height="80" rx="18" fill="url(#grad-wm)"/>
@@ -509,8 +512,8 @@
         </defs>
       </svg>
       <div>
-        <div style="font-size:32px;font-weight:200;letter-spacing:-0.04em;color:var(--white);">dictus</div>
-        <div class="label" style="margin-top:4px;">Wordmark — DM Sans 200 · lowercase</div>
+        <div style="font-size:32px;font-weight:200;letter-spacing:-0.04em;color:var(--white);">Dictus</div>
+        <div class="label" style="margin-top:4px;">Nom de marque sur le site — DM Sans 200 · tracking -0.04em</div>
       </div>
     </div>
   </section>
@@ -702,9 +705,12 @@
   </section>
 
   <!-- TYPOGRAPHY -->
-  <section>
+  <section id="typographie">
     <h2>Typographie</h2>
     <div class="divider"></div>
+    <p style="margin-bottom:24px;">Référence des usages vérifiés le 17 septembre 2026 : les interfaces iOS et desktop utilisent les polices système. Android et le site utilisent DM Sans. Le symbole des trois barres est indépendant de la typographie.</p>
+    <h3>Site et supports marketing</h3>
+    <p style="font-size:14px;margin-bottom:28px;">DM Sans est la police du site, des vidéos Remotion et du gabarit des captures App Store. Les exemples ci-dessous décrivent cette présentation de marque ; les interfaces représentées dans une vidéo conservent leur typographie native.</p>
     <div class="type-samples">
       <div class="type-row">
         <div class="type-meta">
@@ -712,7 +718,7 @@
           <div class="label" style="margin-top:4px;">DM Sans · 200</div>
         </div>
         <div class="type-sample">
-          <div style="font-size:40px;font-weight:200;letter-spacing:-0.03em;color:var(--white);">dictus</div>
+          <div style="font-size:40px;font-weight:200;letter-spacing:-0.04em;color:var(--white);">Dictus</div>
         </div>
       </div>
       <div class="type-row">
@@ -735,20 +741,46 @@
       </div>
       <div class="type-row">
         <div class="type-meta">
-          <div class="label">Mono / Code</div>
+          <div class="label">Code marketing</div>
           <div class="label" style="margin-top:4px;">DM Mono · 400</div>
         </div>
         <div class="type-sample">
           <div style="font-family:var(--font-mono);font-size:13px;color:var(--accent-hi);">group.com.pivi.dictus</div>
         </div>
       </div>
-      <div class="type-row" style="border:none;padding:0;">
+    </div>
+    <p style="font-size:14px;margin-top:20px;">DM Mono sert notamment aux scènes de terminal des vidéos et aux surtitres des captures marketing. Les interfaces utilisent leurs propres styles monospaces pour les informations techniques.</p>
+    <h3 style="margin-top:40px;">Interfaces par plateforme</h3>
+    <p style="font-size:14px;margin-bottom:28px;">Ces aperçus système dépendent de l'ordinateur qui affiche le kit. Pour reproduire un écran, se référer aux styles de l'application concernée.</p>
+    <div class="type-samples">
+      <div class="type-row">
         <div class="type-meta">
-          <div class="label">iOS native</div>
-          <div class="label" style="margin-top:4px;">SF Pro Rounded</div>
+          <div class="label">iOS</div>
+          <div class="label" style="margin-top:4px;">Système · titres arrondis</div>
         </div>
         <div class="type-sample">
-          <div style="font-size:15px;color:var(--white-70);">Pour toute l'UI SwiftUI in-app</div>
+          <div style="font-family:var(--font-rounded);font-size:42px;font-weight:100;color:var(--white);">Dictus</div>
+          <p style="font-family:var(--font-system);font-size:15px;">SF Pro Rounded pour les titres dédiés et le nom d'accueil en ultraLight. Police système par défaut pour le corps, les légendes et le clavier. Aucune DM Sans embarquée dans l'app.</p>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="label">Desktop</div>
+          <div class="label" style="margin-top:4px;">Polices système</div>
+        </div>
+        <div class="type-sample">
+          <div style="font-family:var(--font-system);font-size:28px;font-weight:600;color:var(--white);">Dictus</div>
+          <p style="font-family:var(--font-system);font-size:15px;">Interface, onboarding et pilule : pile système selon l'OS. Le nom de marque utilise la graisse 600. DM Sans n'est pas chargée.</p>
+        </div>
+      </div>
+      <div class="type-row" style="border:none;padding:0;">
+        <div class="type-meta">
+          <div class="label">Android</div>
+          <div class="label" style="margin-top:4px;">DM Sans · thème partagé</div>
+        </div>
+        <div class="type-sample">
+          <div style="font-size:30px;font-weight:200;color:var(--white);">Dictus</div>
+          <p style="font-size:15px;">DM Sans est embarquée et appliquée à neuf styles du thème de l'app et du clavier. Certains styles Material restent par défaut ; les blocs techniques peuvent être monospaces.</p>
         </div>
       </div>
     </div>
@@ -783,7 +815,7 @@
       </div>
       <div class="guideline do">
         <div class="guideline-tag">✓ À faire</div>
-        <p>Utiliser le wordmark en minuscules <em>dictus</em>, poids 200, avec le tracking -0.03em.</p>
+        <p>Sur le site, écrire <em>Dictus</em> en DM Sans 200, avec le tracking -0.04em. Dans les apps, reprendre la typographie de chaque plateforme décrite ci-dessus.</p>
       </div>
       <div class="guideline dont">
         <div class="guideline-tag">✗ À éviter</div>

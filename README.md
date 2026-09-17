@@ -6,6 +6,7 @@ Single source of truth for Dictus brand assets across all platforms.
 
 ```
 dictus-brand/
+├── TYPOGRAPHY.md               # Typography by platform and marketing surface
 ├── source/                     # Source files (SVG + brand kit)
 │   ├── appicon-light.svg       # App icon — light mode
 │   ├── appicon-dark.svg        # App icon — dark mode
@@ -64,6 +65,12 @@ Center bar = gradient `#6BA3FF` to `#2563EB`.
 Side bars = white at 45% and 65% opacity.
 Icon background = gradient `#0D2040` to `#071020` at 135deg.
 Bar border radius = 4.5pt.
+
+## Typography
+
+Typography varies by surface. iOS and desktop use system fonts; Android, the website, and existing marketing templates use DM Sans. DM Mono is reserved for specific technical treatments. See [Typography](TYPOGRAPHY.md) for platform details and source references.
+
+The website's “Dictus” wordmark uses DM Sans at weight 200; app wordmarks follow their platform conventions. The three-bar symbol is font-independent.
 
 ## Usage
 
