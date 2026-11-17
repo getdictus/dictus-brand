@@ -6,7 +6,9 @@ Single source of truth for Dictus brand assets across all platforms.
 
 ```
 dictus-brand/
-├── TYPOGRAPHY.md               # Typography by platform and marketing surface
+├── TYPOGRAPHY.md               # Typefaces, wordmark, licences
+├── MOTION.md                   # Durations, easings, waveform motif, reduced motion
+├── ILLUSTRATION.md             # The walking woman and the hand-lettered marker line
 ├── source/                     # Source files (SVG + brand kit)
 │   ├── appicon-light.svg       # App icon — light mode
 │   ├── appicon-dark.svg        # App icon — dark mode
@@ -48,15 +50,46 @@ dictus-brand/
 
 ## Brand Colors
 
-| Name             | Hex       |
-|------------------|-----------|
-| Background       | `#0A1628` |
-| Accent           | `#3D7EFF` |
-| Accent highlight | `#6BA3FF` |
-| Surface          | `#161C2C` |
-| Recording        | `#EF4444` |
-| Smart mode       | `#8B5CF6` |
-| Success          | `#22C55E` |
+Values from the product code: [`DictusColors.swift`](https://github.com/getdictus/dictus-ios/blob/develop/DictusCore/Sources/DictusCore/Design/DictusColors.swift) (iOS), [`DictusColors.kt`](https://github.com/getdictus/dictus-android/blob/develop/core/src/main/java/dev/pivisolutions/dictus/core/theme/DictusColors.kt) (Android) and [`globals.css`](https://github.com/getdictus/dictus-website/blob/develop/src/app/globals.css) (website, private repo).
+
+### Accent and state colours
+
+| Name             | Hex       | Use |
+|------------------|-----------|-----|
+| Accent           | `#3D7EFF` | Brand blue: mic, links, icons, large text |
+| Accent highlight | `#6BA3FF` | Waveform centre bars, logo bar gradient start |
+| Button blue      | `#2563EB` | Filled buttons, badges and icon tiles (gradient `#2563EB` → `#1D4ED8`) |
+| Recording        | `#EF4444` | Recording state |
+| Success          | `#22C55E` | Success state |
+
+### Backgrounds and surfaces
+
+| Role | Light | Dark |
+|------|-------|------|
+| Background | `#F2F2F7` | `#0A1628` |
+| Surface    | `#FFFFFF` | `#161C2C` |
+| Website secondary ground | `#EFF1F5` | `#111827` |
+
+iOS declares the background and surface pairs in `DictusColors.swift` (`dictusBackground`, `dictusSurface`). The website declares the same pairs plus the secondary ground as `--theme-bg-primary`, `--theme-surface` and `--theme-bg-secondary` in `globals.css`.
+
+### Button blue and contrast
+
+White text on the accent `#3D7EFF` measures 3.73:1, under WCAG AA for normal text. Filled buttons, badges and icon tiles therefore use `#2563EB` with white text (5.17:1; 6.70:1 on the gradient end `#1D4ED8`), drawn as a 135° gradient `#2563EB` → `#1D4ED8`. Navy is no longer used for buttons: it is kept for the logo tile.
+
+Other rules from the same source:
+- small text on white or grey never uses `#3D7EFF`; it uses `#1F5FE0` (5.57:1 on white);
+- white on `#3D7EFF` only at large sizes (24 px regular or 18.66 px bold and up);
+- body text on navy uses `#B8C4D9` (10.3:1).
+
+Source: dictus-website [PR #127](https://github.com/getdictus/dictus-website/pull/127) (merged 2 November 2026) for [issue #118](https://github.com/getdictus/dictus-website/issues/118), contrast notes and `.button-blue` in [`globals.css`](https://github.com/getdictus/dictus-website/blob/develop/src/app/globals.css).
+
+### Smart Modes are blue: violet `#8B5CF6` is retired
+
+Smart Modes use the brand blues (`#3D7EFF`, `#6BA3FF`), like the rest of the product. Violet `#8B5CF6` is no longer a brand colour: never a fill, a ring or a badge.
+
+- **iOS** removed it in commit [`cade31cf5`](https://github.com/getdictus/dictus-ios/commit/cade31cf5) ([issue #789](https://github.com/getdictus/dictus-ios/issues/789)): "Smart Modes are blue, never purple". The `dictusSmartMode` token is gone; its callers use `dictusAccent`. The armed Smart Mode mark on the mic is the mode's glyph in accent blue on a white disc ([`AnimatedMicButton.swift`](https://github.com/getdictus/dictus-ios/blob/develop/DictusCore/Sources/DictusCore/Design/AnimatedMicButton.swift)).
+- **Website:** [`scripts/check-no-violet.mjs`](https://github.com/getdictus/dictus-website/blob/develop/scripts/check-no-violet.mjs) fails on any violet or purple colour in `src/` (a local check, not wired into CI).
+- **Android** still declares a leftover `SmartMode = Color(0xFF8B5CF6)` token, mapped to the Material `tertiary` colour ([`DictusColors.kt`](https://github.com/getdictus/dictus-android/blob/develop/core/src/main/java/dev/pivisolutions/dictus/core/theme/DictusColors.kt), [`DictusTheme.kt`](https://github.com/getdictus/dictus-android/blob/develop/core/src/main/java/dev/pivisolutions/dictus/core/theme/DictusTheme.kt)). It is to be removed there.
 
 ## Logo
 
@@ -68,9 +101,25 @@ Bar border radius = 4.5pt.
 
 ## Typography
 
-Typography varies by surface. iOS and desktop use system fonts; Android, the website, and existing marketing templates use DM Sans. DM Mono is reserved for specific technical treatments. See [Typography](TYPOGRAPHY.md) for platform details and source references.
+DM Sans is the brand typeface (Android, website, and iOS since November 2026, paywall first). DM Mono sets section eyebrows and technical labels on the website; Kalam is the handwritten accent face. Desktop stays on the system stack. The wordmark is "Dictus" in DM Sans 200 at `-0.04em`. See [Typography](TYPOGRAPHY.md) for platform details, usage rules and licences.
 
-The website's “Dictus” wordmark uses DM Sans at weight 200; app wordmarks follow their platform conventions. The three-bar symbol is font-independent.
+## Motion and illustration
+
+- [Motion](MOTION.md): durations, easings, the waveform motif and how each product handles reduced motion.
+- [Illustration](ILLUSTRATION.md): the walking-woman character and the hand-lettered marker line.
+
+## Marketing assets
+
+These live in the product repositories. They are linked here, not copied.
+
+| Asset | Where |
+|-------|-------|
+| iOS onboarding intro scenes (three looping videos, light and dark, per language) | [`dictus-ios/assets/onboarding/intro/`](https://github.com/getdictus/dictus-ios/tree/develop/assets/onboarding/intro), with its [README](https://github.com/getdictus/dictus-ios/blob/develop/assets/onboarding/intro/README.md) ([issue #667](https://github.com/getdictus/dictus-ios/issues/667)) |
+| App Store captures (de-DE, en-GB, es-ES, fr-FR) | [`dictus-ios/assets/appstore/captures/`](https://github.com/getdictus/dictus-ios/tree/develop/assets/appstore/captures) |
+| App Store hero art (current: V16-B) | [`dictus-ios/assets/appstore/art/v16-B/`](https://github.com/getdictus/dictus-ios/tree/develop/assets/appstore/art/v16-B) |
+| Google Play listing texts and images | [`dictus-android/fastlane/metadata/android/`](https://github.com/getdictus/dictus-android/tree/develop/fastlane/metadata/android) |
+| Google Play image generator | [`dictus-android/tools/play-listing/`](https://github.com/getdictus/dictus-android/tree/develop/tools/play-listing) |
+| Promo films (After Effects and Remotion) | [`getdictus/dictus-promo`](https://github.com/getdictus/dictus-promo) (private repository) |
 
 ## Usage
 
