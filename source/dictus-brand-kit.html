@@ -34,11 +34,8 @@
     --white-40:   rgba(255,255,255,0.40);
     --white-15:   rgba(255,255,255,0.08);
 
-    /* Presentation and marketing fonts; native UI follows the platform rules below. */
     --font-sans: 'DM Sans', sans-serif;
     --font-mono: 'DM Mono', monospace;
-    --font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-rounded: ui-rounded, system-ui, sans-serif;
   }
 
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -356,9 +353,6 @@
   .state-badge.processing { background: rgba(61,126,255,0.12); color: #93C5FD; border-color: rgba(61,126,255,0.3); }
   .state-badge.processing .dot { background: var(--accent); animation: pulse 0.8s ease infinite; }
 
-  .state-badge.smart { background: rgba(139,92,246,0.12); color: #C4B5FD; border-color: rgba(139,92,246,0.3); }
-  .state-badge.smart .dot { background: #8B5CF6; animation: pulse 0.8s ease infinite; }
-
   .state-badge.success { background: rgba(34,197,94,0.1); color: #86EFAC; border-color: rgba(34,197,94,0.25); }
   .state-badge.success .dot { background: #22C55E; }
 
@@ -388,9 +382,25 @@
     <div>
       <h1><span>Dictus</span><br>Brand Kit</h1>
     </div>
-    <p class="hero-sub">v1.0 · Mars 2026 · PIVI Solutions</p>
-    <p style="max-width:520px;font-size:14px;">Identité visuelle pour Dictus — clavier iOS de dictation vocale offline. Direction : premium, sombre, glassmorphism. Cohérent avec iOS 26 Liquid Glass.</p>
+    <p class="hero-sub">v1.1 · Septembre 2026 · PIVI Solutions</p>
+    <p style="max-width:560px;font-size:14px;">Identité visuelle de Dictus — dictée vocale locale par défaut sur iPhone et ordinateur. La marque conserve ses bleus, sa waveform et son icône sombre ; le site adopte une direction claire, sobre et très espacée.</p>
   </div>
+
+  <!-- WEBSITE DIRECTION -->
+  <section>
+    <h2>Direction du site</h2>
+    <div class="divider"></div>
+    <p style="max-width:760px;margin-bottom:24px;font-size:14px;">
+      Le clair est la direction principale de getdictus.com. Utiliser DM Sans fine, une hiérarchie calme,
+      la waveform en filigrane et de vrais écrans produit. Liquid Glass reste discret sur les contrôles
+      utiles et doit conserver un repli lisible dans Safari et Firefox. Le sombre demeure une variante,
+      pas le point de départ imposé.
+    </p>
+    <p style="max-width:760px;font-size:14px;">
+      Formuler les promesses avec précision : transcription locale par défaut, code public et vérifiable,
+      Desktop gratuit, Android en développement. Ne pas inventer de prix, de disponibilité ou de capture.
+    </p>
+  </section>
 
   <!-- LOGO MARK -->
   <section>
@@ -488,7 +498,7 @@
       </div>
     </div>
 
-    <!-- Website wordmark; app wordmarks follow their platform typography. -->
+    <!-- Wordmark -->
     <div style="margin-top:32px;padding:40px;background:var(--ink-2);border-radius:16px;border:1px solid var(--border);display:flex;align-items:center;gap:20px;">
       <svg width="48" height="48" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="80" height="80" rx="18" fill="url(#grad-wm)"/>
@@ -512,8 +522,8 @@
         </defs>
       </svg>
       <div>
-        <div style="font-size:32px;font-weight:200;letter-spacing:-0.04em;color:var(--white);">Dictus</div>
-        <div class="label" style="margin-top:4px;">Nom de marque sur le site — DM Sans 200 · tracking -0.04em</div>
+        <div style="font-size:32px;font-weight:200;letter-spacing:-0.04em;color:var(--white);">dictus</div>
+        <div class="label" style="margin-top:4px;">Wordmark — DM Sans 200 · lowercase</div>
       </div>
     </div>
   </section>
@@ -604,6 +614,30 @@
     <div class="divider"></div>
     <div class="palette-grid">
       <div class="swatch">
+        <div class="swatch-color" style="background:#F2F2F7;border-color:rgba(0,0,0,0.1)"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Light Primary</div>
+          <div class="swatch-hex">#F2F2F7</div>
+          <div class="swatch-role">Fond principal du site</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#EFF1F5;border-color:rgba(0,0,0,0.1)"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Light Secondary</div>
+          <div class="swatch-hex">#EFF1F5</div>
+          <div class="swatch-role">Sections alternées</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#FFFFFF;border-color:rgba(0,0,0,0.1)"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Light Surface</div>
+          <div class="swatch-hex">#FFFFFF</div>
+          <div class="swatch-role">Surfaces et états actifs</div>
+        </div>
+      </div>
+      <div class="swatch">
         <div class="swatch-color" style="background:#0A1628;"></div>
         <div class="swatch-info">
           <div class="swatch-name">Ink Deep</div>
@@ -663,11 +697,6 @@
             <td>État enregistrement actif</td>
           </tr>
           <tr>
-            <td>--color-smart-mode</td>
-            <td><span class="dot" style="background:#8B5CF6"></span>#8B5CF6</td>
-            <td>Mode LLM intelligent actif</td>
-          </tr>
-          <tr>
             <td>--color-success</td>
             <td><span class="dot" style="background:#22C55E"></span>#22C55E</td>
             <td>Insertion réussie</td>
@@ -695,8 +724,8 @@
       <div class="grad-swatch" style="background:linear-gradient(135deg,#0D2040,#071020);">
         <div class="grad-label">Icon BG · 135°<br>#0D2040 → #071020</div>
       </div>
-      <div class="grad-swatch" style="background:linear-gradient(135deg,#1A4E8A,#0F3460);">
-        <div class="grad-label">Button · 135°<br>#1A4E8A → #0F3460</div>
+      <div class="grad-swatch" style="background:linear-gradient(135deg,#2563EB,#1D4ED8);">
+        <div class="grad-label">Button · 135°<br>#2563EB → #1D4ED8</div>
       </div>
       <div class="grad-swatch" style="background:linear-gradient(180deg,#6BA3FF,#2563EB);">
         <div class="grad-label">Bar accent · 180°<br>#6BA3FF → #2563EB</div>
@@ -705,12 +734,9 @@
   </section>
 
   <!-- TYPOGRAPHY -->
-  <section id="typographie">
+  <section>
     <h2>Typographie</h2>
     <div class="divider"></div>
-    <p style="margin-bottom:24px;">Référence des usages vérifiés le 17 septembre 2026 : les interfaces iOS et desktop utilisent les polices système. Android et le site utilisent DM Sans. Le symbole des trois barres est indépendant de la typographie.</p>
-    <h3>Site et supports marketing</h3>
-    <p style="font-size:14px;margin-bottom:28px;">DM Sans est la police du site, des vidéos Remotion et du gabarit des captures App Store. Les exemples ci-dessous décrivent cette présentation de marque ; les interfaces représentées dans une vidéo conservent leur typographie native.</p>
     <div class="type-samples">
       <div class="type-row">
         <div class="type-meta">
@@ -718,16 +744,16 @@
           <div class="label" style="margin-top:4px;">DM Sans · 200</div>
         </div>
         <div class="type-sample">
-          <div style="font-size:40px;font-weight:200;letter-spacing:-0.04em;color:var(--white);">Dictus</div>
+          <div style="font-size:40px;font-weight:200;letter-spacing:-0.03em;color:var(--white);">Dictus</div>
         </div>
       </div>
       <div class="type-row">
         <div class="type-meta">
           <div class="label">Heading</div>
-          <div class="label" style="margin-top:4px;">DM Sans · 400</div>
+          <div class="label" style="margin-top:4px;">DM Sans · 200–400</div>
         </div>
         <div class="type-sample">
-          <div style="font-size:22px;font-weight:400;color:var(--white);">Dictation vocale offline</div>
+          <div style="font-size:22px;font-weight:300;color:var(--white);">Votre voix reste la vôtre.</div>
         </div>
       </div>
       <div class="type-row">
@@ -736,51 +762,25 @@
           <div class="label" style="margin-top:4px;">DM Sans · 300</div>
         </div>
         <div class="type-sample">
-          <div style="font-size:15px;font-weight:300;color:var(--white-70);">Transcription en temps réel, 100% sur l'appareil.</div>
+          <div style="font-size:15px;font-weight:300;color:var(--white-70);">Transcription locale par défaut, sur iPhone et ordinateur.</div>
         </div>
       </div>
       <div class="type-row">
         <div class="type-meta">
-          <div class="label">Code marketing</div>
+          <div class="label">Mono / Code</div>
           <div class="label" style="margin-top:4px;">DM Mono · 400</div>
         </div>
         <div class="type-sample">
           <div style="font-family:var(--font-mono);font-size:13px;color:var(--accent-hi);">group.com.pivi.dictus</div>
         </div>
       </div>
-    </div>
-    <p style="font-size:14px;margin-top:20px;">DM Mono sert notamment aux scènes de terminal des vidéos et aux surtitres des captures marketing. Les interfaces utilisent leurs propres styles monospaces pour les informations techniques.</p>
-    <h3 style="margin-top:40px;">Interfaces par plateforme</h3>
-    <p style="font-size:14px;margin-bottom:28px;">Ces aperçus système dépendent de l'ordinateur qui affiche le kit. Pour reproduire un écran, se référer aux styles de l'application concernée.</p>
-    <div class="type-samples">
-      <div class="type-row">
-        <div class="type-meta">
-          <div class="label">iOS</div>
-          <div class="label" style="margin-top:4px;">Système · titres arrondis</div>
-        </div>
-        <div class="type-sample">
-          <div style="font-family:var(--font-rounded);font-size:42px;font-weight:100;color:var(--white);">Dictus</div>
-          <p style="font-family:var(--font-system);font-size:15px;">SF Pro Rounded pour les titres dédiés et le nom d'accueil en ultraLight. Police système par défaut pour le corps, les légendes et le clavier. Aucune DM Sans embarquée dans l'app.</p>
-        </div>
-      </div>
-      <div class="type-row">
-        <div class="type-meta">
-          <div class="label">Desktop</div>
-          <div class="label" style="margin-top:4px;">Polices système</div>
-        </div>
-        <div class="type-sample">
-          <div style="font-family:var(--font-system);font-size:28px;font-weight:600;color:var(--white);">Dictus</div>
-          <p style="font-family:var(--font-system);font-size:15px;">Interface, onboarding et pilule : pile système selon l'OS. Le nom de marque utilise la graisse 600. DM Sans n'est pas chargée.</p>
-        </div>
-      </div>
       <div class="type-row" style="border:none;padding:0;">
         <div class="type-meta">
-          <div class="label">Android</div>
-          <div class="label" style="margin-top:4px;">DM Sans · thème partagé</div>
+          <div class="label">iOS native</div>
+          <div class="label" style="margin-top:4px;">SF Pro Rounded</div>
         </div>
         <div class="type-sample">
-          <div style="font-size:30px;font-weight:200;color:var(--white);">Dictus</div>
-          <p style="font-size:15px;">DM Sans est embarquée et appliquée à neuf styles du thème de l'app et du clavier. Certains styles Material restent par défaut ; les blocs techniques peuvent être monospaces.</p>
+          <div style="font-size:15px;color:var(--white-70);">Pour toute l'UI SwiftUI in-app</div>
         </div>
       </div>
     </div>
@@ -795,7 +795,6 @@
       <div class="state-badge idle"><div class="dot"></div> Idle</div>
       <div class="state-badge recording"><div class="dot"></div> Recording</div>
       <div class="state-badge processing"><div class="dot"></div> Transcribing</div>
-      <div class="state-badge smart"><div class="dot"></div> Smart Mode</div>
       <div class="state-badge success"><div class="dot"></div> Inserted</div>
     </div>
   </section>
@@ -807,7 +806,7 @@
     <div class="do-dont">
       <div class="guideline do">
         <div class="guideline-tag">✓ À faire</div>
-        <p>Toujours utiliser le logo sur un fond sombre (#0A1628 ou équivalent) comme usage principal.</p>
+        <p>Sur fond clair, conserver le squircle sombre de l'icône et un wordmark noir lisible.</p>
       </div>
       <div class="guideline dont">
         <div class="guideline-tag">✗ À éviter</div>
@@ -815,7 +814,7 @@
       </div>
       <div class="guideline do">
         <div class="guideline-tag">✓ À faire</div>
-        <p>Sur le site, écrire <em>Dictus</em> en DM Sans 200, avec le tracking -0.04em. Dans les apps, reprendre la typographie de chaque plateforme décrite ci-dessus.</p>
+        <p>Utiliser le wordmark <em>Dictus</em>, poids 200, avec le tracking -0.03em.</p>
       </div>
       <div class="guideline dont">
         <div class="guideline-tag">✗ À éviter</div>
@@ -833,8 +832,8 @@
   </section>
 
   <div class="footer">
-    <p>Dictus Brand Kit v1.0 · PIVI Solutions · 2026</p>
-    <p>MIT License · dictus.app</p>
+    <p>Dictus Brand Kit v1.1 · PIVI Solutions · 2026</p>
+    <p>MIT License · getdictus.com</p>
   </div>
 
 </div>
